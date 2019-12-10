@@ -1,20 +1,18 @@
 ## i相册
 
-发布日期 | 未定
+文档名称 | i相册产品需求文档
 -|-
-文档状态 | 未完成
-小程序名称 | i相册
+产品名称 | i相册
+文档状态 | 进行中
 文档作者 | 林晓君
-
+发布日期 | 未定
 
 ### 价值主张设计 
 #### 背景
-大部分手机相册只是简单的存储图片的功能，也没有更加专业管理相册的app，而更加细分的功能如图像分类、脸庞分类、搜索图片功能却有所缺失，有提供相似服务的相册却不够精准，无法满足用户的精准搜索图片的需要。
-
-根据调查，手机自带的相册只是单纯的记录我们拍摄的照片，一般手机相册只会提供基础相册功能，如时间故事回忆功能以及简单的基础分类功能。虽然苹果自带的相册提供类似的服务，但是通过使用发现他所提供的这个几个服务都不够精准，也不够全面化，只能满足用户的基础需求。例如：输入“蓝天”作为关键字进行搜索查询有关蓝天的照片，但是搜索结果却夹杂着大量其他带有蓝色颜色的其他图片。
+用户拍摄和存储照片的数量越来越多，大量的照片管理起来效率低下，时间成本高。大部分手机相册只是简单的存储图片的功能，也没有更加专业管理相册的app，而更加细分的功能如图像分类、脸庞分类、搜索图片功能却有所缺失，有提供相似服务的相册却不够精准，也不够全面化，只能满足用户的基础需求，无法满足用户的精准搜索图片的需要。
 
 #### 加值宣言
-i相册app将在拥有基本管理相册功能的基础下，开发了更加有针对性的功能。登录该app的账号设备，免费提供大容量将图片自动保存到云端。主要功能为通过图像识别api进行图像分类功能；通过相册聚类api进行图库的脸庞检索，为每一人建立专属的相册，用户可以更加方便的查看某一目标对象的照片；以及图像搜索功能，用户可以通过输入关键字进行目标对象的检索。用户可以快速查看目标照片，以及获得了更加精准更加全面的图片结果，更加满足用户的需求，提升用户使用相册的体验。
+i相册app将在拥有基本管理相册功能的基础下，开发了更加有针对性的功能。登录该app的账号设备，免费提供大容量将图片自动保存到云端。主要功能为通过图像识别api进行图像分类功能；通过相册聚类api进行图库的脸庞检索，为每一人建立专属的相册，用户可以更加方便的查看某一目标对象的照片；以及图像搜索功能，用户可以通过输入关键字进行目标对象的检索。用户可以快速查看目标照片，以及获得了更加精准更加全面的图片结果。更加满足用户的需求，提升用户使用相册的体验。
 
 #### 面向对象
 喜欢记录生活，查看照片回忆的所有年龄段群体。
@@ -47,14 +45,15 @@ i相册app将在拥有基本管理相册功能的基础下，开发了更加有�
 
 3.小林的朋友找他要一张当初他们一起去大草原旅游的合照，但是那是一年前的时候的事情了，翻相册真的好麻烦啊。突然她灵机一动，打开了i相册app，在搜索栏输入“草原合照”，一下子就找到她想要的照片，可太省心啦！
 
-#### 人工智能概率性与用户痛点 
-AI概率性考量：
-人脸识别：图片低分辨率，脸部模糊，脸部不是正脸的情况下存在识别错误或识别不出的情况。
 
 ***
 
 ### 原型
- [i相册原型](http://nfunm049.gitee.io/i-image)，可自行点击查看。
+
+* [i相册原型](http://nfunm049.gitee.io/i-image)，可自行点击查看。
+ 
+* [相册原型下载入口](https://gitee.com/NFUNM049/i-image)，有需要自行下载。
+
 1.开屏页面
 
 ![开屏.png](https://upload-images.jianshu.io/upload_images/9455364-86d2c38100b65b0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -67,19 +66,19 @@ AI概率性考量：
 
 ![快速相册.png](https://upload-images.jianshu.io/upload_images/9455364-632faa0f2e6ccf77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 图片搜索
+* 图片搜索（使用了图像搜索api）
 
 ![搜索功能.png](https://upload-images.jianshu.io/upload_images/9455364-28911fdaa72a0661.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![搜索功能页面2.png](https://upload-images.jianshu.io/upload_images/9455364-f99c234a2937d7a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 图片分类
+* 图片分类（使用了图像分类api）
 
 ![图片分类页面1.png](https://upload-images.jianshu.io/upload_images/9455364-1bcab7bef174f981.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![图片分类页面2.png](https://upload-images.jianshu.io/upload_images/9455364-ad63ae0ea1bc6e30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 脸庞分类
+* 脸庞分类（使用了相册聚类api）
 
 ![脸庞分类页面1.png](https://upload-images.jianshu.io/upload_images/9455364-82ed1b751909eb33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -100,7 +99,7 @@ AI概率性考量：
 
 ### api的调用与选择
 
-**[相册聚类](https://www.faceplusplus.com.cn/photo-album-clustering/)**
+#### [相册聚类](https://www.faceplusplus.com.cn/photo-album-clustering/)
 
 *   接口描述：识别相册中照片的人脸，然后照片可根据人脸进行自动聚类，新入库的照片也可按照人脸自动归类。调用者可以通过此API在云端建立或删除人脸相册(Album)，相册可以根据相片中的人脸对相片进行智能分组，调用者也可通过图片中人脸来搜索该人脸所属分组的相片。
 
@@ -112,9 +111,7 @@ AI概率性考量：
 
 *   接口地址：[https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum](https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum)
 
-* 缺点：在使用较低质量或人脸模糊的照片时，都无法进行识别。照片需具有较高的质量，且为正脸，脸部无遮挡。
-
-* 总结：有很多平台提供人脸识别的功能，但face++提供相册聚类的功能，能够更加快速的识别相册中的人物并进行自动聚类。**根据多个开放平台提供的人脸识别服务对比发现，face++平台的api功能较多、识别相准确性高，在人脸识别类的api更有竞争优势，更胜一筹。**
+* **使用比较分析：**在使用较低质量或人脸模糊的照片时，精准度将有偏差。有很多平台提供人脸识别的功能，但face++提供相册聚类的功能，能够更加快速的识别相册中的人物并进行自动聚类。**根据多个开放平台（azure、百度ai、阿里云）提供的人脸识别服务对比发现，face++平台的api功能较多、识别相准确性高，总体来说，在人脸识别类的api更有竞争优势同时也更加成熟，性价比最高。**
 
 * 服务示例：
 ![相册聚类.png](https://upload-images.jianshu.io/upload_images/9455364-d307121edb1498c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -178,11 +175,12 @@ except urllib.error.HTTPError as e:
     print(e.read().decode('utf-8'))
 ```
 
-**图片搜索**
-* 阿里云的图片搜索与微软的图片搜索比较
+#### 图片搜索
+* 接口描述：必应图像搜索 API 使你可以搜索和查找类似于Bing.com/images的高质量静态图像和动画图像。 可以将搜索优化为，按属性（包括大小、颜色、许可证和新鲜度）包含或排除图像。 此外，还可以搜索热门图像、上传图像以获取关于图像的见解，并能显示缩略图预览。**可以通过文字进行搜索，功能也更加完善，搜索更加优化。**
+
+* **使用比较分析（阿里云的图片搜索与微软的图片搜索比较）：**
 **[阿里云的图片搜索](https://ai.aliyun.com/imagesearch?spm=a2c4g.11186623.h2v3icoap.191.75462d55RhjP0i)：**通过输入具有相同元素或者主体内容的图片，在海量图片库中找到相同或者相似的图片。**前提条件是输入图片进行搜索。**
 **[微软的图片搜索](https://docs.microsoft.com/zh-cn/azure/cognitive-services/bing-image-search/overview)：**必应图像搜索 API 允许你在应用程序中使用必应的图像搜索功能。 通过向 API 发送搜索查询，可以获取与类似的高质量图像。虽然必应图像搜索 API 提供仅限图像的搜索结果，但是你可以组合或使用其他可用的必应搜索 API在 Web 上查找多种类型的内容。
-必应图像搜索 API 使你可以搜索和查找类似于Bing.com/images的高质量静态图像和动画图像。 可以将搜索优化为，按属性（包括大小、颜色、许可证和新鲜度）包含或排除图像。 此外，还可以搜索热门图像、上传图像以获取关于图像的见解，并能显示缩略图预览。**可以通过文字进行搜索，功能也更加完善，搜索更加优化。**
 
 * 输入
 ```
@@ -212,12 +210,11 @@ for i in range(4):
 plt.show()
 ```
 
-**图像分类**
-
+#### 图像分类
 [azure图像分类](https://docs.microsoft.com/zh-cn/azure/cognitive-services/computer-vision/concept-categorizing-images)
-* 目前找到的图像分类api仅有微软的图像分类。
-
 * 接口描述：除了标记和说明以外，计算机视觉还返回图像中检测到的基于分类的类别。 不同于标记，类别是在父/子继承层次结构中组织的，并且数量更少（86 个，与数千个标记截然相反）。
+
+* **使用比较分析：**目前找到的图像分类api仅有微软的图像分类。微软的人工智能相对来说是比较成熟的。
 
 * 服务示例
 ![图像分类.png](https://upload-images.jianshu.io/upload_images/9455364-f77d9c8623e45f1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -267,6 +264,10 @@ plt.imshow(image)
 plt.axis("off")
 _ = plt.title(image_caption, size="x-large", y=-0.1)
 ```
+#### API使用错误反馈
+错误现象处理办法：
+1.当用户进行图像搜索时，对结果不满意，可以点击下方“存在问题？重新搜索”进行重新搜索结果。
+2.当用户发现图像分类与脸庞识别有误时，可以选择错误的图像进行错误提交。
 
 #### 所使用的api链接
 [face++相册聚类](https://www.faceplusplus.com.cn/photo-album-clustering/)
