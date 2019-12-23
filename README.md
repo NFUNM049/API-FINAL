@@ -5,26 +5,30 @@
 产品名称 | i相册
 文档状态 | 进行中
 文档作者 | 林晓君
-发布日期 | 未定
+发布日期 | 2019.12.23
 
 ### 价值主张设计 
 #### 背景
-用户拍摄和存储照片的数量越来越多，大量的照片管理起来效率低下，时间成本高。大部分手机相册只是简单的存储图片的功能，也没有更加专业管理相册的app，而更加细分的功能如图像分类、脸庞分类、搜索图片功能却有所缺失，有提供相似服务的相册却不够精准，也不够全面化，只能满足用户的基础需求，无法满足用户的精准搜索图片的需要。
+随着智能手机的普及，拍照的成本降低，用户拍摄和存储照片的数量也越来越多，大量的照片管理起来效率低下，花费时间成本高。大部分手机相册只是简单的存储图片的功能，没有更加专业管理相册的app，而更加细分的功能如图像分类、脸庞分类、搜索图片功能却有所缺失，有提供相似服务的相册却不够精准，也不够全面化，只能满足用户的基础需求，无法满足用户的精准搜索图片的需要。
 
 #### 加值宣言
-i相册app将在拥有基本管理相册功能的基础下，开发了更加有针对性的功能。登录该app的账号设备，免费提供大容量将图片自动保存到云端。主要功能为通过图像识别api进行图像分类功能；通过相册聚类api进行图库的脸庞检索，为每一人建立专属的相册，用户可以更加方便的查看某一目标对象的照片；以及图像搜索功能，用户可以通过输入关键字进行目标对象的检索。用户可以快速查看目标照片，以及获得了更加精准更加全面的图片结果。更加满足用户的需求，提升用户使用相册的体验。
+i相册app将在拥有基本管理相册功能的基础下，开发了更加有针对性的功能。登录该app的账号设备，免费提供大容量将图片自动保存到云端。
+* 主要功能为通过图像识别api对图片进行自动图像分类功能；
+* 通过相册聚类api进行图库的脸庞检索，为图库的中人脸进行智能分组、建立专属相册，用户可以更加方便的查看某一目标对象的照片；还可以通过图片中人脸来搜索该人脸所属分组的相片；
+* 以及图像搜索功能，用户可以通过输入关键字进行目标对象的检索。用户可以快速查看目标照片，以及获得了更加精准更加全面的图片结果。更加满足用户的需求，提升用户使用相册的体验。
 
 #### 面向对象
 喜欢记录生活，查看照片回忆的所有年龄段群体。
 
 #### 目的
-定格你的美好记忆 —— i相册。
+定格你的记忆 —— i相册。
 
 #### 核心价值 
 
-提供云端管理相册的功能，用户能够在茫茫的照片海中快速找到目标照片，节省时间和效率。
+用户能够在茫茫的照片海中快速找到目标照片，节省时间和效率。
 
 #### 用户痛点
+
 1.用户想要查看她相册所有狗狗的照片。
 
 2.用户想要查看她相册里朋友A的所有照片。
@@ -111,7 +115,7 @@ i相册app将在拥有基本管理相册功能的基础下，开发了更加有�
 
 *   接口地址：[https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum](https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum)
 
-* **使用比较分析：**在使用较低质量或人脸模糊的照片时，精准度将有偏差。有很多平台提供人脸识别的功能，但face++提供相册聚类的功能，能够更加快速的识别相册中的人物并进行自动聚类。**根据多个开放平台（azure、百度ai、阿里云）提供的人脸识别服务对比发现，face++平台的api功能较多、识别相准确性高，总体来说，在人脸识别类的api更有竞争优势同时也更加成熟，性价比最高。**
+* 使用比较分析：在使用较低质量或人脸模糊的照片时，精准度将有偏差。有很多平台提供人脸识别的功能，但face++提供相册聚类的功能，能够更加快速的识别相册中的人物并进行自动聚类。**根据多个开放平台（azure、百度ai、阿里云）提供的人脸识别服务对比发现，face++平台的api功能较多、识别相准确性高，总体来说，在人脸识别类的api更有竞争优势同时也更加成熟，性价比最高。**
 
 * 服务示例：
 ![相册聚类.png](https://upload-images.jianshu.io/upload_images/9455364-d307121edb1498c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -178,9 +182,11 @@ except urllib.error.HTTPError as e:
 #### 图片搜索
 * 接口描述：必应图像搜索 API 使你可以搜索和查找类似于Bing.com/images的高质量静态图像和动画图像。 可以将搜索优化为，按属性（包括大小、颜色、许可证和新鲜度）包含或排除图像。 此外，还可以搜索热门图像、上传图像以获取关于图像的见解，并能显示缩略图预览。**可以通过文字进行搜索，功能也更加完善，搜索更加优化。**
 
-* **使用比较分析（阿里云的图片搜索与微软的图片搜索比较）：**
-**[阿里云的图片搜索](https://ai.aliyun.com/imagesearch?spm=a2c4g.11186623.h2v3icoap.191.75462d55RhjP0i)：**通过输入具有相同元素或者主体内容的图片，在海量图片库中找到相同或者相似的图片。**前提条件是输入图片进行搜索。**
-**[微软的图片搜索](https://docs.microsoft.com/zh-cn/azure/cognitive-services/bing-image-search/overview)：**必应图像搜索 API 允许你在应用程序中使用必应的图像搜索功能。 通过向 API 发送搜索查询，可以获取与类似的高质量图像。虽然必应图像搜索 API 提供仅限图像的搜索结果，但是你可以组合或使用其他可用的必应搜索 API在 Web 上查找多种类型的内容。
+* 使用比较分析（阿里云的图片搜索与微软的图片搜索比较）：
+
+[阿里云的图片搜索](https://ai.aliyun.com/imagesearch?spm=a2c4g.11186623.h2v3icoap.191.75462d55RhjP0i)：通过输入具有相同元素或者主体内容的图片，在海量图片库中找到相同或者相似的图片。**前提条件是输入图片进行搜索。**
+
+[微软的图片搜索](https://docs.microsoft.com/zh-cn/azure/cognitive-services/bing-image-search/overview)：**必应图像搜索 API 允许你在应用程序中使用必应的图像搜索功能。 通过向 API 发送搜索查询，可以获取与类似的高质量图像。虽然必应图像搜索 API 提供仅限图像的搜索结果，但是你可以组合或使用其他可用的必应搜索 API在 Web 上查找多种类型的内容。**
 
 * 输入
 ```
@@ -214,7 +220,7 @@ plt.show()
 [azure图像分类](https://docs.microsoft.com/zh-cn/azure/cognitive-services/computer-vision/concept-categorizing-images)
 * 接口描述：除了标记和说明以外，计算机视觉还返回图像中检测到的基于分类的类别。 不同于标记，类别是在父/子继承层次结构中组织的，并且数量更少（86 个，与数千个标记截然相反）。
 
-* **使用比较分析：**目前找到的图像分类api仅有微软的图像分类。微软的人工智能相对来说是比较成熟的。
+* 使用比较分析：目前找到的图像分类api仅有微软的图像分类。微软的人工智能相对来说是比较成熟的。
 
 * 服务示例
 ![图像分类.png](https://upload-images.jianshu.io/upload_images/9455364-f77d9c8623e45f1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -227,6 +233,8 @@ import requests
 import matplotlib.pyplot as plt
 from PIL import Image
 from io import BytesIO
+import os
+import sys
 
 # Add your Computer Vision subscription key and endpoint to your environment variables.
 if 'COMPUTER_VISION_SUBSCRIPTION_KEY' in os.environ:
@@ -241,7 +249,7 @@ if 'COMPUTER_VISION_ENDPOINT' in os.environ:
 analyze_url = endpoint + "vision/v2.1/analyze"
 
 # Set image_path to the local path of an image that you want to analyze.
-image_path = "C:/Documents/ImageToAnalyze.jpg"
+image_path = r"D:\F盘 个人学习练习\大三上\api\timg.jpg"
 
 # Read the image into a byte array
 image_data = open(image_path, "rb").read()
@@ -266,7 +274,9 @@ _ = plt.title(image_caption, size="x-large", y=-0.1)
 ```
 #### API使用错误反馈
 错误现象处理办法：
+
 1.当用户进行图像搜索时，对结果不满意，可以点击下方“存在问题？重新搜索”进行重新搜索结果。
+
 2.当用户发现图像分类与脸庞识别有误时，可以选择错误的图像进行错误提交。
 
 #### 所使用的api链接
