@@ -54,9 +54,9 @@ i相册app将在拥有基本管理相册功能的基础下，开发了更加有�
 
 ### 原型
 
-* [i相册原型](http://nfunm049.gitee.io/i-image)，可自行点击查看。
+* [i相册原型]( http://nfunm049.gitee.io/ixiangce)，可自行点击查看。
  
-* [相册原型下载入口](https://gitee.com/NFUNM049/i-image)，有需要自行下载。
+* [相册原型下载入口](https://gitee.com/NFUNM049/ixiangce)，有需要自行下载。
 
 1.开屏页面
 
