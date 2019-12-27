@@ -3,7 +3,7 @@
 文档名称 | i相册产品需求文档
 -|-
 产品名称 | i相册
-文档状态 | 进行中
+文档状态 | 已完成
 文档作者 | 林晓君
 发布日期 | 2019.12.23
 
@@ -71,6 +71,13 @@ i相册app将在拥有基本管理相册功能的基础下，开发了更加有�
 
 ![首页.png](https://upload-images.jianshu.io/upload_images/9455364-edfb7713c7f10542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+图片详情页-使用百度通用物体和场景识别
+
+![图片详情页-使用图像物体和场景识别.png](https://upload-images.jianshu.io/upload_images/9455364-a16839d7c41da638.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+图片详情页-百度通用物体和场景识别检测结果详情页面
+![图片详情页-检测结果详情.png](https://upload-images.jianshu.io/upload_images/9455364-896ebe177bb34a24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 3.快速相册（api）
 
 ![快速相册.png](https://upload-images.jianshu.io/upload_images/9455364-632faa0f2e6ccf77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -100,17 +107,21 @@ i相册app将在拥有基本管理相册功能的基础下，开发了更加有�
 
 ### 产品结构图
 
-![i相册产品结构图.png](https://upload-images.jianshu.io/upload_images/9455364-27d9b88ada5aa705.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![i相册产品结构图.2.png](https://upload-images.jianshu.io/upload_images/9455364-8a73373854817629.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 产品功能结构图
 
-![i相册产品功能结构图.png](https://upload-images.jianshu.io/upload_images/9455364-6400fd0d4edfbbc8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![i相册产品功能结构图.2.png](https://upload-images.jianshu.io/upload_images/9455364-400b31d513df4f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 产品流程图
+
+![产品流程图.png](https://upload-images.jianshu.io/upload_images/9455364-64e99e814e643e04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### api的调用与选择
 
 #### [相册聚类](https://www.faceplusplus.com.cn/photo-album-clustering/)
 
-*   接口描述：识别相册中照片的人脸，然后照片可根据人脸进行自动聚类，新入库的照片也可按照人脸自动归类。调用者可以通过此API在云端建立或删除人脸相册(Album)，相册可以根据相片中的人脸对相片进行智能分组，调用者也可通过图片中人脸来搜索该人脸所属分组的相片。
+*  接口描述：识别相册中照片的人脸，然后照片可根据人脸进行自动聚类，新入库的照片也可按照人脸自动归类。调用者可以通过此API在云端建立或删除人脸相册(Album)，相册可以根据相片中的人脸对相片进行智能分组，调用者也可通过图片中人脸来搜索该人脸所属分组的相片。
 
 * 图片要求:
 图片格式：JPG(JPEG)，PNG
@@ -118,71 +129,13 @@ i相册app将在拥有基本管理相册功能的基础下，开发了更加有�
 图片文件大小：2MB
 最小人脸像素尺寸：系统能够检测到的人脸框为一个正方形，正方形边长的最小值为 150 像素。
 
-*   接口地址：[https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum](https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum)
+*  接口地址：[https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum](https://api-cn.faceplusplus.com/imagepp/v1/facealbum/createalbum)
 
 * 使用比较分析：在使用较低质量或人脸模糊的照片时，精准度将有偏差。有很多平台提供人脸识别的功能，但face++提供相册聚类的功能，能够更加快速的识别相册中的人物并进行自动聚类。**根据多个开放平台（azure、百度ai、阿里云）提供的人脸识别服务对比发现，face++平台的api功能较多、识别相准确性高，总体来说，在人脸识别类的api更有竞争优势同时也更加成熟，性价比最高。**
 
 * 服务示例：
 ![相册聚类.png](https://upload-images.jianshu.io/upload_images/9455364-d307121edb1498c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 输入
-```
-# -*- coding: utf-8 -*-
-import urllib.request
-import urllib.error
-import time
-
-http_url = 'https://api-cn.faceplusplus.com/facepp/v3/detect'
-key = "xxx"
-secret = "xxx"
-filepath = r"D:\F盘 个人学习练习\大三上\api\timg.jpg"
-
-boundary = '----------%s' % hex(int(time.time() * 1000))
-data = []
-data.append('--%s' % boundary)
-data.append('Content-Disposition: form-data; name="%s"\r\n' % 'api_key')
-data.append(key)
-data.append('--%s' % boundary)
-data.append('Content-Disposition: form-data; name="%s"\r\n' % 'api_secret')
-data.append(secret)
-data.append('--%s' % boundary)
-fr = open(filepath, 'rb')
-data.append('Content-Disposition: form-data; name="%s"; filename=" "' % 'image_file')
-data.append('Content-Type: %s\r\n' % 'application/octet-stream')
-data.append(fr.read())
-fr.close()
-data.append('--%s' % boundary)
-data.append('Content-Disposition: form-data; name="%s"\r\n' % 'return_landmark')
-data.append('1')
-data.append('--%s' % boundary)
-data.append('Content-Disposition: form-data; name="%s"\r\n' % 'return_attributes')
-data.append(
-    "gender,age,smiling,headpose,facequality,blur,eyestatus,emotion,ethnicity,beauty,mouthstatus,eyegaze,skinstatus")
-data.append('--%s--\r\n' % boundary)
-
-for i, d in enumerate(data):
-    if isinstance(d, str):
-        data[i] = d.encode('utf-8')
-
-http_body = b'\r\n'.join(data)
-
-# build http request
-req = urllib.request.Request(url=http_url, data=http_body)
-
-# header
-req.add_header('Content-Type', 'multipart/form-data; boundary=%s' % boundary)
-
-try:
-    # post data to server
-    resp = urllib.request.urlopen(req, timeout=5)
-    # get response
-    qrcont = resp.read()
-    # if you want to load as json, you should decode first,
-    # for example: json.loads(qrount.decode('utf-8'))
-    print(qrcont.decode('utf-8'))
-except urllib.error.HTTPError as e:
-    print(e.read().decode('utf-8'))
-```
 
 #### 图片搜索
 * 接口描述：必应图像搜索 API 使你可以搜索和查找类似于Bing.com/images的高质量静态图像和动画图像。 可以将搜索优化为，按属性（包括大小、颜色、许可证和新鲜度）包含或排除图像。 此外，还可以搜索热门图像、上传图像以获取关于图像的见解，并能显示缩略图预览。**可以通过文字进行搜索，功能也更加完善，搜索更加优化。**
@@ -281,20 +234,45 @@ _ = plt.title(image_caption, size="x-large", y=-0.1)
 * 识别物体和场景：持识别动物、植物、商品、建筑、风景、动漫、食材、公众人物等10万个常见物体及场景，接口返回大类及细分类的名称结果
 * 获取百科信息：支持获取图片识别结果对应的百科信息，接口返回百科词条URL、图片和摘要描述，可选择是否需要返回百科信息
 
-优势：百度的通用物体和场景识别除普通的对图像进行识别生成识别结果外，还可以额外提供对应的百度百科、百度词条的信息，这也是百度作为国内知名搜索引擎的优势，并且准确率高，让人信服。
+* 使用比较分析：
+
+同类产品有azure提供的[计算机视觉服务](https://azure.microsoft.com/zh-cn/services/cognitive-services/)和[腾讯](https://ai.qq.com/product/visionimgidy.shtml#scene)图片识别。**azure和腾讯都单纯的提供对物体和场景的识别，而百度提供服务则更加丰富。百度的通用物体和场景识别除普通的对图像进行识别生成识别结果外，还可以额外提供对应的百度百科、百度词条的信息，这也是百度作为国内知名搜索引擎的优势，并且准确率高，让人信服。**
+此外：1.基于百度海量数据，准确率高。2.标签体系丰富，可识别出10万+物体及场景标签，并在不断丰富中，持续提供更精细的识别服务。3.简单易用支持标准化接口封装，调用简单，只需上传单张图片，即可获取识别结果
 
 ![百度通用识别.png](https://upload-images.jianshu.io/upload_images/9455364-09b6982e8762a81d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-实现：在浏览相册时，想知道这张图片中的动物、人物、植物或者其他生物是什么，则可以点击界面右上角的小标符，则可以显示基本的简单识别结果，例如图片中的植物名称、动物名称、名人姓名等等，此外，通过长摁用户获得该图片的智能识别结果以及识别到时百度百科信息、百科词条、图片和描述，还可以点击链接了解更具体的信息
+* 实现：
+在浏览相册时，想知道这张图片中的动物、人物、植物或者其他生物是什么，则可以点击界面右上角的小标符，则可以显示基本的简单识别结果，例如图片中的植物名称、动物名称、名人姓名等等，此外，通过长摁用户获得该图片的智能识别结果以及识别到时百度百科信息、百科词条、图片和描述，还可以点击链接了解更具体的信息
 
-代码实现：
+* 输入：
+```
+import requests
+import base64
+
+'''
+通用物体和场景识别
+'''
+
+request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"
+# 二进制方式打开图片文件
+f = open(r"图片", 'rb')
+img = base64.b64encode(f.read())
+
+params = {"image":img}
+access_token = '***************************************'
+request_url = request_url + "?access_token=" + access_token
+headers = {'content-type': 'application/x-www-form-urlencoded'}
+response = requests.post(request_url, data=params, headers=headers)
+if response:
+    print (response.json())
+```
 
 #### API使用错误反馈
 错误现象处理办法：
 
-1.当用户进行图像搜索时，对结果不满意，可以点击下方“存在问题？重新搜索”进行重新搜索结果。
+1.当用户进行**图像搜索**时，对结果不满意，可以点击下方“存在问题？重新搜索”进行重新搜索结果。
 
-2.当用户发现图像分类与脸庞识别有误时，可以选择错误的图像进行错误提交。
+2.当用户发现**物体和场景识别、图像分类、脸庞识别**有误时，可以选择错误的图像进行错误提交。
 
 #### 所使用的api链接
 [face++相册聚类](https://www.faceplusplus.com.cn/photo-album-clustering/)
